@@ -116,17 +116,12 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {},
               child: Text(
                 'Sign Up',
-              style: TextStyle(fontSize: 20)
+              style: TextStyle(fontSize: 40)
               ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
