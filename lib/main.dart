@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Safe Alarm',
+      title: 'SafeAlarm',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: primaryColor
       ),
-      home: MyHomePage(title: 'Safe Alarm'),
+      home: MyHomePage(title: 'SafeAlarm'),
     );
   }
 }
@@ -61,18 +61,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  //int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
+  //void _incrementCounter() {
+    //setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+      //_counter++;
+    //});
+  //}
 
   @override
   Widget build(BuildContext context) {
@@ -106,20 +106,25 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+
+          mainAxisAlignment: MainAxisAlignment.start,
+
           children: <Widget>[
-            Image(image: AssetImage('assets/logo.png')),
             Text(
-              'Seizure Detection',
+                '\n\n\nSeizure Detection\n',
+                style: TextStyle(fontSize: 45, fontWeight: FontWeight.w600),
             ),
+            Image(image: AssetImage('assets/logo.png')),
             RaisedButton(
               onPressed: () {},
               child: Text(
                 'Sign Up',
-              style: TextStyle(fontSize: 40)
+              style: TextStyle(fontSize: 24)
               ),
             ),
           ],
+
+
         ),
       ),
     );
