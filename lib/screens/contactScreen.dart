@@ -32,7 +32,7 @@ class ContactScreenState extends State<ContactScreen> {
     // widget tree.
     firstNameController.dispose();
     lastNameController.dispose();
-    phoneController.dispose();
+    //phoneController.dispose();
     emergencyFirstNameController.dispose();
     emergencyLastNameController.dispose();
     emergencyPhoneController.dispose();
@@ -78,20 +78,6 @@ class ContactScreenState extends State<ContactScreen> {
               },
               keyboardType: TextInputType.text,
               controller: lastNameController,
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person_outline),
-                hintText: 'Phone Number',
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              keyboardType: TextInputType.phone,
-              controller: phoneController,
             ),
             Text('Emergency Contact'),
             TextFormField(
@@ -144,8 +130,8 @@ class ContactScreenState extends State<ContactScreen> {
                   // otherwise.
                   if (_formKey.currentState.validate()) {
                     // If the form is valid, display a Snackbar.
-                    // Scaffold.of(context)
-                    //     .showSnackBar(SnackBar(content: Text('Processing Data')));
+                    //Scaffold.of(context)
+                    // .showSnackBar(SnackBar(content: Text('Processing Data')));
                     Navigator.pushNamed(context, 'welcome', arguments:
                     ContactInfo(
                       firstNameController.text,
