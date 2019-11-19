@@ -3,6 +3,7 @@ import 'package:safe_alarm/screens/signupScreen.dart';
 import 'package:safe_alarm/screens/contactScreen.dart';
 import 'package:safe_alarm/screens/welcomeScreen.dart';
 import 'package:safe_alarm/screens/sleepScreen.dart';
+import 'package:safe_alarm/screens/alarmScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
         "/": (BuildContext context) => SignupScreen(),
         "/contact": (BuildContext context) => ContactScreen(),
         "/welcome": (BuildContext context) => WelcomeScreen(),
-        "/sleep": (BuildContext context) => SleepScreen()
+        "/sleep": (BuildContext context) => SleepScreen(),
+        "/alarm": (BuildContext context) => AlarmScreen()
       }
     );
   }

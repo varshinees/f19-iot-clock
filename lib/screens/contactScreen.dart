@@ -146,7 +146,7 @@ class ContactScreenState extends State<ContactScreen> {
                     // If the form is valid, display a Snackbar.
                     // Scaffold.of(context)
                     //     .showSnackBar(SnackBar(content: Text('Processing Data')));
-                    Navigator.pushNamed(context, 'welcome', arguments:
+                    Navigator.pushNamed(context, '/welcome', arguments:
                     ContactInfo(
                       firstNameController.text,
                       lastNameController.text,
