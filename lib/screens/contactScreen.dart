@@ -44,109 +44,174 @@ class ContactScreenState extends State<ContactScreen> {
     // Build a Form widget using the _formKey created above.
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sign Up")
+        title: Text(
+          "SIGN UP", 
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold
+          ),
+        )
       ),
       body: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person_outline),
-                hintText: 'First Name',
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              keyboardType: TextInputType.text,
-              controller: firstNameController,
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person_outline),
-                hintText: 'Last Name',
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              keyboardType: TextInputType.text,
-              controller: lastNameController,
-            ),
-            Text('Emergency Contact'),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person_outline),
-                hintText: 'First Name',
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              keyboardType: TextInputType.text,
-              controller: emergencyFirstNameController,
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person_outline),
-                hintText: 'Last Name',
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              keyboardType: TextInputType.text,
-              controller: emergencyLastNameController,
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person_outline),
-                hintText: 'Phone Number',
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              keyboardType: TextInputType.phone,
-              controller: emergencyPhoneController,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: RaisedButton(
-                onPressed: () {
-                  // Validate returns true if the form is valid, or false
-                  // otherwise.
-                  if (_formKey.currentState.validate()) {
-                    // If the form is valid, display a Snackbar.
-                    // Scaffold.of(context)
-                    //     .showSnackBar(SnackBar(content: Text('Processing Data')));
-                    Navigator.pushNamed(context, '/welcome', arguments:
-                    ContactInfo(
-                      firstNameController.text,
-                      lastNameController.text,
-                      phoneController.text,
-                      emergencyFirstNameController.text,
-                      emergencyLastNameController.text,
-                      emergencyPhoneController.text
-                      )
-                    );
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  hintText: 'First Name',
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
                   }
+                  return null;
                 },
-                child: Text('Submit'),
+                keyboardType: TextInputType.text,
+                controller: firstNameController,
               ),
             ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  hintText: 'Last Name',
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.text,
+                controller: lastNameController,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  hintText: 'Phone Number',
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.phone,
+                controller: phoneController,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              padding: EdgeInsets.all(10),
+              width: MediaQuery.of(context).size.width,
+              color: Colors.grey,
+              child: Text(
+                'Emergency Contact',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.0
+                )
+              )
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  hintText: 'First Name',
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.text,
+                controller: emergencyFirstNameController,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  hintText: 'Last Name',
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.text,
+                controller: emergencyLastNameController,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person_outline),
+                  hintText: 'Phone Number',
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.phone,
+                controller: emergencyPhoneController,
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.all(8),
+                child: ButtonTheme(
+                  minWidth: 300,
+                  height: 50,
+                  buttonColor: Color.fromRGBO(66, 69, 148, 0.96),
+                  child: RaisedButton(
+                    onPressed: () {
+                      // Validate returns true if the form is valid, or false
+                      // otherwise.
+                      if (_formKey.currentState.validate()) {
+                        Navigator.pushNamed(context, '/welcome', arguments:
+                        ContactInfo(
+                          firstNameController.text,
+                          lastNameController.text,
+                          phoneController.text,
+                          emergencyFirstNameController.text,
+                          emergencyLastNameController.text,
+                          emergencyPhoneController.text
+                          )
+                        );
+                      }
+                    },
+                    child: Text(
+                      'Complete', 
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold
+                      )
+                    ),
+                  ),
+                ),
+              )
+            )
           ],
         ),
       ),

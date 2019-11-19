@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white,
         appBarTheme: AppBarTheme(
           color: Color.fromRGBO(66, 69, 148, 0.96)
-        )
+        ),
       ),
       initialRoute: "/",
       routes: <String,WidgetBuilder> {
